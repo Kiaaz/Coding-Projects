@@ -8,7 +8,7 @@ for i in range(100):
 print(len(C))
 
 for j in range(len(C)*1000):
-	#C.insert(0,j*j)
-	C.append(j*j)
+	C.insert(0,j*j)
+	# C.append(j*j)
 
-#print(C)
+print(C)

@@ -1,6 +1,7 @@
 from functools import reduce
 import numpy as np
 
+
 # 1.Write a function that takes a list of floats and integers and returns the sum.
 
 # Solution: We can use the sum function.
@@ -10,6 +11,7 @@ def tall(numbers):
         return sum(list(numbers))
     else:
         return sum(numbers)
+
 
 # Test sets A for experimental purpose as a function created above
 numbers = [1, 2, 3, 4, 5, 0.2]
@@ -33,6 +35,7 @@ def average(numbers):
         return sum(numbers) / len(numbers)
     else:
         return sum(numbers) / len(sum(numbers))
+
 
 print("Another Function....! ")
 print(average(numbers))
@@ -63,6 +66,7 @@ B = [] * 10
 print(spam)
 print(B)
 
+
 # This does not change spam-Why?
 # ANSWER: Because Spam and B are two different/individual objects.
 # What happened at the beginning was B replicated list of contents from Spam.
@@ -85,9 +89,10 @@ def custom_zip(x, y):
         zipper.append((x[i], y[i]))
     return zipper
 
+
 # Defining x and y
 x = [1, 2, 3, 4, 5]
-y = ['red','green','blue','yellow','brown']
+y = ['red', 'green', 'blue', 'yellow', 'brown']
 
 # Function call, tests
 print("Here comes a little bit different zip() function: e.g. reversed order")
@@ -102,4 +107,5 @@ print(custom_zip(x, y))
 # I want you to think of the reason and why append doesn’t take much time.
 
 # ANSWER:
-#
+# From the code on list.py, calling the function insert() will move the list before adding a new value in a list.
+# Calling append() is faster due to the list does not have predefined size, aso each time a new value is being added - it will go on top of the current list.
