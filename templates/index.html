@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<title>Blogg | Entries</title>
+<link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" type="text/css" />
+</head>
+<body>
+<div class="container">
+<h1>Blogg</h1>
+<form action="{{ url_for('add_entry') }}" method="post" class="add-entry">
+<dl>
+<dt>Title:
+<dd><input type="text" size="30" name="tittel">
+<dt>Text:
+<dd><textarea name="nyhet" rows="5" cols="40"></textarea>
+<dt>Forfatter:
+<dd><input type="text" size="30" name="forfatter">
+<br>
+<br>
+<dd><input type="submit" class="btn btn-default" value="Share">
+</dl>
+</form>
+<br>
+<ul class="entries">
+{% for entry in entries %}
+<li class="entry"><h2 id={{ entry.id }}>{{ entry.tittel }}</h2>{{ entry.nyhet|safe }}<br>{{entry.forfatter}}
+{% else %}
+<li><em>No entries yet. Add some!</em>
+{% endfor %}
+</ul>
+</div>
+</body>
+</html>
